@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveGolfStream</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2rem;
+      color: #39ff14;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px;
+      background-color: #111;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .stream-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .stream-tile {
+      position: relative;
+    }
+
+    .live-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: red;
+      color: white;
+      padding: 3px 8px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+    }
+
+    .scroll {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .scroll h2 {
+      color: #39ff14;
+    }
+
+    .post {
+      margin-bottom: 30px;
+    }
+
+    .post img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .post p {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>LiveGolfStream</header>
+  <nav>
+    <a href="#">Live</a>
+    <a href="#scroll">The Scroll</a>
+    <a href="#">Submit a Stream</a>
+  </nav>
+
+  <section class="stream-grid">
+    <div class="stream-tile">
+      <div class="live-badge">LIVE</div>
+      <iframe src="https://www.youtube.com/embed/zhSjUISUkYg" allowfullscreen></iframe>
+    </div>
+    <div class="stream-tile">
+      <div class="live-badge">LIVE</div>
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID_2" allowfullscreen></iframe>
+    </div>
+    <div class="stream-tile">
+      <div class="live-badge">LIVE</div>
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID_3" allowfullscreen></iframe>
+    </div>
+    <div class="stream-tile">
+      <div class="live-badge">LIVE</div>
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID_4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="scroll" id="scroll">
+    <h2>The Scroll</h2>
+
+    <div class="post">
+      <h3>Best Golf Cigars: Let’s Find Your Favorite Smoke</h3>
+      <img src="https://via.placeholder.com/800x200" alt="Golf Cigars" />
+      <p>A rundown of the best cigars to bring to the course depending on your vibe, pace, and flavor preference...</p>
+    </div>
+
+    <div class="post">
+      <h3>3 Drills to Fix Your Slice — Today</h3>
+      <img src="https://via.placeholder.com/800x200" alt="Fix Your Slice" />
+      <p>Sick of watching your ball peel right into the trees? Try these 3 quick drills for immediate feedback...</p>
+    </div>
+  </section>
+</body>
+</html>
