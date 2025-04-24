@@ -9,41 +9,38 @@
     body {
       background-color: black;
       color: white;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
     }
     header {
-      background: black;
-      padding: 1rem 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: black;
     }
     .logo {
+      color: limegreen;
       font-size: 2rem;
       font-weight: bold;
-      color: limegreen;
     }
     nav a {
       color: white;
+      margin-left: 1.5rem;
       text-decoration: none;
-      margin: 0 1rem;
       font-weight: bold;
-    }
-    .nav-right {
-      display: flex;
-      gap: 1rem;
     }
     .stream-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
+      gap: 1.5rem;
       padding: 2rem;
     }
     .stream {
       position: relative;
       overflow: hidden;
+      border-radius: 10px;
       transition: transform 0.3s ease;
     }
     .stream:hover {
@@ -53,6 +50,7 @@
       width: 100%;
       height: 200px;
       border: none;
+      border-radius: 10px;
     }
     .live-badge {
       position: absolute;
@@ -60,23 +58,24 @@
       left: 10px;
       background-color: red;
       color: white;
-      font-size: 0.8rem;
-      padding: 0.2rem 0.5rem;
-      border-radius: 3px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 4px;
     }
     .section-title {
       color: limegreen;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       margin: 2rem 2rem 1rem;
     }
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      gap: 1.5rem;
       padding: 0 2rem 2rem;
     }
     .blog-post {
-      background: #111;
+      background-color: #111;
       padding: 1rem;
       border-radius: 10px;
     }
@@ -84,20 +83,24 @@
       color: limegreen;
     }
     .blog-post p {
-      color: lightgray;
+      color: #ccc;
+    }
+    #submit {
+      padding: 1rem 2rem 3rem;
     }
     footer {
-      padding: 1rem 2rem;
-      background: #111;
-      color: gray;
       text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: gray;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">LGS</div>
-    <nav class="nav-right">
+    <nav>
       <a href="#live">Live</a>
       <a href="#current">The Current</a>
       <a href="#submit">Submit a Stream</a>
@@ -108,19 +111,19 @@
     <div class="stream-grid">
       <div class="stream">
         <div class="live-badge">LIVE</div>
-        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+        <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" allowfullscreen></iframe>
       </div>
       <div class="stream">
         <div class="live-badge">LIVE</div>
-        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+        <iframe src="https://www.youtube.com/embed/21X5lGlDOfg" allowfullscreen></iframe>
       </div>
       <div class="stream">
         <div class="live-badge">LIVE</div>
-        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+        <iframe src="https://www.youtube.com/embed/DyDfgMOUjCI" allowfullscreen></iframe>
       </div>
       <div class="stream">
         <div class="live-badge">LIVE</div>
-        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -134,16 +137,14 @@
       </div>
       <div class="blog-post">
         <h3>The Golf Parking Lot Scandal</h3>
-        <p>Did a couple really get caught cheating behind the 18th green? Here’s the viral story that took over golf Twitter—and what really went down.</p>
+        <p>Did a couple really get caught cheating behind the 18th green? Here's the viral story that took over golf Twitter—and what really went down.</p>
       </div>
     </div>
   </section>
 
   <section id="submit">
     <div class="section-title">Submit a Stream</div>
-    <div style="padding: 0 2rem;">
-      <p style="color: lightgray;">Want to be featured? Submit your stream anonymously using <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" style="color: limegreen;">this form</a>.</p>
-    </div>
+    <p style="color: lightgray;">Want to be featured? Submit your stream anonymously using <a href="https://forms.gle/YOUR_FORM_LINK" style="color: limegreen;" target="_blank">this form</a>.</p>
   </section>
 
   <footer>
