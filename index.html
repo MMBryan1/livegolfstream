@@ -1,134 +1,153 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LiveGolfStream</title>
+  <title>Live Golf Streaming</title>
   <style>
     body {
-      margin: 0;
-      font-family: sans-serif;
       background-color: black;
       color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
     }
-
     header {
-      text-align: center;
-      padding: 20px;
-      font-size: 2rem;
-      color: #39ff14;
-    }
-
-    nav {
+      background: black;
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 10px;
-      background-color: #111;
+      align-items: center;
+      justify-content: space-between;
     }
-
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: limegreen;
+    }
     nav a {
       color: white;
       text-decoration: none;
+      margin: 0 1rem;
       font-weight: bold;
     }
-
+    .nav-right {
+      display: flex;
+      gap: 1rem;
+    }
     .stream-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
+      gap: 1rem;
+      padding: 2rem;
     }
-
-    .stream-tile {
+    .stream {
       position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
-
+    .stream:hover {
+      transform: scale(1.03);
+    }
+    .stream iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+    }
     .live-badge {
       position: absolute;
       top: 10px;
       left: 10px;
       background-color: red;
       color: white;
-      padding: 3px 8px;
       font-size: 0.8rem;
-      font-weight: bold;
-      border-radius: 5px;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
     }
-
-    iframe {
-      width: 100%;
-      height: 200px;
+    .section-title {
+      color: limegreen;
+      font-size: 1.5rem;
+      margin: 2rem 2rem 1rem;
     }
-
-    .scroll {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem 2rem;
     }
-
-    .scroll h2 {
-      color: #39ff14;
+    .blog-post {
+      background: #111;
+      padding: 1rem;
+      border-radius: 10px;
     }
-
-    .post {
-      margin-bottom: 30px;
+    .blog-post h3 {
+      color: limegreen;
     }
-
-    .post img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
+    .blog-post p {
+      color: lightgray;
     }
-
-    .post p {
-      color: #ccc;
+    footer {
+      padding: 1rem 2rem;
+      background: #111;
+      color: gray;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <header>LiveGolfStream</header>
-  <nav>
-    <a href="#">Live</a>
-    <a href="#scroll">The Scroll</a>
-    <a href="#">Submit a Stream</a>
-  </nav>
+  <header>
+    <div class="logo">LGS</div>
+    <nav class="nav-right">
+      <a href="#live">Live</a>
+      <a href="#current">The Current</a>
+      <a href="#submit">Submit a Stream</a>
+    </nav>
+  </header>
 
-  <section class="stream-grid">
-    <div class="stream-tile">
-      <div class="live-badge">LIVE</div>
-      <iframe src="https://www.youtube.com/embed/zhSjUISUkYg" allowfullscreen></iframe>
-    </div>
-    <div class="stream-tile">
-      <div class="live-badge">LIVE</div>
-      <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID_2" allowfullscreen></iframe>
-    </div>
-    <div class="stream-tile">
-      <div class="live-badge">LIVE</div>
-      <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID_3" allowfullscreen></iframe>
-    </div>
-    <div class="stream-tile">
-      <div class="live-badge">LIVE</div>
-      <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID_4" allowfullscreen></iframe>
+  <section id="live">
+    <div class="stream-grid">
+      <div class="stream">
+        <div class="live-badge">LIVE</div>
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+      </div>
+      <div class="stream">
+        <div class="live-badge">LIVE</div>
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+      </div>
+      <div class="stream">
+        <div class="live-badge">LIVE</div>
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+      </div>
+      <div class="stream">
+        <div class="live-badge">LIVE</div>
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID"></iframe>
+      </div>
     </div>
   </section>
 
-  <section class="scroll" id="scroll">
-    <h2>The Scroll</h2>
-
-    <div class="post">
-      <h3>Best Golf Cigars: Let’s Find Your Favorite Smoke</h3>
-      <img src="https://via.placeholder.com/800x200" alt="Golf Cigars" />
-      <p>A rundown of the best cigars to bring to the course depending on your vibe, pace, and flavor preference...</p>
-    </div>
-
-    <div class="post">
-      <h3>3 Drills to Fix Your Slice — Today</h3>
-      <img src="https://via.placeholder.com/800x200" alt="Fix Your Slice" />
-      <p>Sick of watching your ball peel right into the trees? Try these 3 quick drills for immediate feedback...</p>
+  <section id="current">
+    <div class="section-title">The Current</div>
+    <div class="blog-grid">
+      <div class="blog-post">
+        <h3>Rory McIlroy's 2025 Masters Recap</h3>
+        <p>After a strong start, Rory stumbled on the back nine Sunday. We break down what happened and what it means for his major chances going forward.</p>
+      </div>
+      <div class="blog-post">
+        <h3>The Golf Parking Lot Scandal</h3>
+        <p>Did a couple really get caught cheating behind the 18th green? Here’s the viral story that took over golf Twitter—and what really went down.</p>
+      </div>
     </div>
   </section>
+
+  <section id="submit">
+    <div class="section-title">Submit a Stream</div>
+    <div style="padding: 0 2rem;">
+      <p style="color: lightgray;">Want to be featured? Submit your stream anonymously using <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" style="color: limegreen;">this form</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Live Golf Streaming. All rights reserved.
+  </footer>
 </body>
 </html>
